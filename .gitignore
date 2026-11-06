@@ -116,3 +116,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+backend-songs-venv/

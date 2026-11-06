@@ -70,7 +70,7 @@ def update_song(id):
     result = db.songs.update_one({"id": id}, {"$set": update})
     if result.matched_count == 0:
         return jsonify(Message=f"song with id {id} not found"), 404
-    return jsonify(db.songs.find_one({"id": id}, {"_id": 0})), 200
+    return jsonify(db.songs.find_one({"id": id}, {"_id": 0})), 201
 
 
 @app.route("/song/<int:id>", methods=["DELETE"])

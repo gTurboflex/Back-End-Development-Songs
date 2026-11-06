@@ -8,7 +8,7 @@ def test_song_lifecycle(client):
     assert created.status_code == 201
     assert created.json == song
     assert client.post("/song", json=song).status_code == 302
-    assert client.put("/song/200", json={"title": "Updated verse"}).status_code == 200
+    assert client.put("/song/200", json={"title": "Updated verse"}).status_code == 201
     assert client.get("/song/200").json["title"] == "Updated verse"
     assert client.delete("/song/200").status_code == 204
     assert client.get("/count").json["length"] == 20
