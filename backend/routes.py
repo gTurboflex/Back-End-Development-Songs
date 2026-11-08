@@ -32,7 +32,7 @@ def count():
 
 @app.route("/song", methods=["GET"])
 def get_songs():
-    return jsonify(list(db.songs.find({}, {"_id": 0}).sort("id", 1))), 200
+    return jsonify(songs=list(db.songs.find({}, {"_id": 0}).sort("id", 1))), 200
 
 
 @app.route("/song/<int:id>", methods=["GET"])
